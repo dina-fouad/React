@@ -10,7 +10,7 @@ class App extends React.Component{
     return( <div className='web'>
       <Header/>
      
-      <Main />
+      
       <Footer/>    
     </div>
     )
