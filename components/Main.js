@@ -13,7 +13,7 @@ class Main extends React.Component{
 
         <CardColumns>
 
-    {rawData.map((items,index)=>{
+    {rawData.map((items,inde)=>{
     return(
     <HornedBeasts 
     

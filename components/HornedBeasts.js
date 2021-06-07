@@ -34,7 +34,7 @@ render(){
              <Card.Text>
                <p>❤= {this.state.Horned}</p>
                 
-            
+
                 <p>{this.props.description}</p>
              </Card.Text>
 
