@@ -7,12 +7,13 @@ import Main from './components/Main';
 class App extends React.Component{
 
   render(){
-    return( <div className='web'>
-      <Header/>
-     
-      
-      <Footer/>    
-    </div>
+    return( 
+      <div>
+        <Header/>
+        <Main/>
+        <Footer/>
+      </div>   
+    
     )
   }
 
