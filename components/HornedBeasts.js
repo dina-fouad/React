@@ -27,8 +27,8 @@ render(){
              <img src={this.props.src} alt={this.props.description} title={this.props.title} />
              <p>description: {this.props.description}</p> */}
 
-             <Card style={{ width: '18rem' }}>
-             <Card.Img variant="top" src={this.props.src} onClick={this.numOfHorned} />
+             <Card>
+             <Card.Img  src={this.props.src} onClick={this.numOfHorned} />
              <Card.Body>
              <Card.Title>{this.props.title}</Card.Title>
              <Card.Text>
