@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Main from './components/Main';
-import SelectedBeast from './components/SelectedBeast'
+import Forms from './components/Form'
 
 
 class App extends React.Component {

@@ -1,13 +1,7 @@
 import React from 'react';
-
-import HornedBeasts from './HornedBeasts';
-import rawData from './data.json';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import CardColumns from 'react-bootstrap/CardColumns ';
-
-
+import HornedBeast from './HornedBeast';
+import rowData from './data.json';
 import CardGroup from 'react-bootstrap/CardGroup';
-
 
 class Main extends React.Component{
     render(){
@@ -15,7 +9,7 @@ class Main extends React.Component{
         <div>
 
 
-    
+
         <CardGroup>
 
     {rowData.map((items)=>{
