@@ -7,6 +7,7 @@ render(){
 return(
 
 
+
 <h1> Wellcome </h1>
 
 
@@ -15,5 +16,10 @@ return(
 
     }
 }
+
+<h1> Gallery</h1>
+
+)}}
+
 
 export default Header;
