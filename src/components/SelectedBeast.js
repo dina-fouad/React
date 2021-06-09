@@ -1,18 +1,15 @@
-
-
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import rawData from './data.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+class SelectedBeast extends React.Component {
 
-class SelectedBeast extends React.Component{
-   
-
-    render(){
-        return(
-            <Modal.Dialog>
+  render() {
+    return (
+      <div>
+         <Modal.Dialog>
             <Modal.Header closeButton>
               <Modal.Title>Modal title</Modal.Title>
             </Modal.Header>
@@ -34,9 +31,9 @@ class SelectedBeast extends React.Component{
         
             </Modal.Footer>
           </Modal.Dialog>
-           
-        )
-    }
+      </div>
+    );
+  }
 }
 
 export default SelectedBeast;

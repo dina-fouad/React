@@ -1,37 +1,33 @@
+
 import React from 'react';
-
-import HornedBeasts from './HornedBeasts';
-import rawData from './data.json';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import CardColumns from 'react-bootstrap/CardColumns ';
-
-
+import HornedBeast from './HornedBeast';
 import CardGroup from 'react-bootstrap/CardGroup';
 
 
-class Main extends React.Component{
-    render(){
-        return(
-        <div>
+
+class Main extends React.Component {
+    render() {
+        return (
+            <div>
+
+                <CardGroup>
+
+                    {this.props.rowData.map((items) => {
+                         return(<HornedBeast title={items.title} 
+                            description={items.description} 
+                            imgUrl={items.image_url}
+                            openModal={this.props.openModal}
+                            click={this.props.click} />)
+            
+                    })}
+                </CardGroup>
 
 
-    
-        <CardGroup>
-
-    {rowData.map((items)=>{
-    return(<HornedBeast title={items.title} 
-        description={items.description} 
-        imgUrl={items.image_url}/>)
-    })}
-       </CardGroup>
-
-
-
-
-        </div>
+            </div>
         )
     }
 }
 
 export default Main;
+
 
