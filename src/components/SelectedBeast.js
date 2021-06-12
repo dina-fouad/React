@@ -1,38 +1,29 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
-import rawData from './data.json';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button'
 
 class SelectedBeast extends React.Component {
-
   render() {
     return (
-      <div>
-         <Modal.Dialog>
-            <Modal.Header closeButton>
-              <Modal.Title>Modal title</Modal.Title>
-            </Modal.Header>
-          
-            <Modal.Body>
-            <img src={this.props.src} onClick={this.numOfHorned} />
-            
-           <p>{this.props.title}</p>
-          
-               <p>❤= {this.state.Horned}</p>
-                
-            
-                <p>{this.props.description}</p>
+      <Modal show={this.props.show} onHide={this.props.hide}>
+      <Modal.Dialog>
+        <Modal.Header   closeButton />
+        <Modal.Title class="text-left">{this.props.selectedBeast.keyword}</Modal.Title>         
+          <Card style={{ width: '18rem'}}>
+          <Card.Title>{this.props.selectedBeast.title}</Card.Title>
+            <Card.Img src={this.props.selectedBeast.image_url} />
+            <Card.Body>
+              <Card.Text>{this.props.selectedBeast.description}</Card.Text>
+            </Card.Body>
+          </Card>   
+        <Modal.Footer>
+    <Button onClick={this.props.hide}>close</Button>
+  </Modal.Footer>
+      </Modal.Dialog>
 
-            </Modal.Body>
-          
-            <Modal.Footer>
-              <Button variant="secondary">Close</Button>
-        
-            </Modal.Footer>
-          </Modal.Dialog>
-      </div>
-    );
+      </Modal>
+    )
   }
 }
 

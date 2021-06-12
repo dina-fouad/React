@@ -1,60 +1,42 @@
 import React from 'react';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import Main from './components/Main';
-import arrowData from './components/data.json';
-import SelectedBeast from './components/SelectedBeast ';
+import SelectedBeast from './components/SelectedBeast'
+import Footer from './components/Footer';
+import Data from './components/data.json';
 
 
-class App extends React.Component {
+class App extends React.Component{
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      show: false,
-      title: "",
-      src: "",
-      description: "",
-    };
-  }
-  click = (e) => {
-    this.setState({
-      show: !this.state.show,
-      src: e.target.src,
-      title: e.target.alt,
-     description: e.target.name
-    });
-
+    constructor(props) {
+        super(props);
+        this.state = {
+          show: false,
+          Data: Data,
+          beastData: Data,
+          selectedBeast: {}
+        };
+      }
     
-    this.setState({
-      SelectedBeast:SelectedBeast,
-      show: true,
+      showModal = (name) => {
+        const selectedBeast = Data.find(beast => beast.title === name);
+        this.setState({selectedBeast, show:true});
+      }
+    
+      hide = () => {
+        this.setState({show: false});
+      }
 
-    });
-  };
-
-  
- 
-  closeModal = () => {
-    this.setState({ show: false });
-  }
-
-  render() {
-
-    return (
-      <div className='container'>
-        <Header />
-        <Main arrowData={this.state.arrowData} openModal={this.openModal} click={this.click} />
-        <Footer />
-        <SelectedBeast show={this.state.show}
-          closeModal={this.closeModal}
-          SelectedBeast={this.state.SelectedBeast}
-        />
-      </div>
-
-    )
-  }
-
+    render(){
+        return(
+            <div>
+                <Header />
+                <Main showModal={this.showModal}/>
+                <SelectedBeast show={this.state.show} hide={this.hide} selectedBeast={this.state.selectedBeast} />
+                <Footer/>
+            </div>
+        )
+    }
 }
 
 export default App;
